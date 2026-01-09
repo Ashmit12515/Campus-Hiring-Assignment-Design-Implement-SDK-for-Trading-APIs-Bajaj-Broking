@@ -42,25 +42,16 @@ GET  /api/v1/orders/{orderId}
 GET  /api/v1/trades
 GET  /api/v1/portfolio
 ```
-Order Execution Logic
-Market orders execute immediately
+## Order Execution Logic
+- Market orders execute immediately
 
-Limit orders are placed but not executed (simplified)
+- Limit orders are placed but not executed (simplified)
 
-Each executed order creates a trade
+- Each executed order creates a trade
 
-Portfolio is derived from executed trades
+- Portfolio is derived from executed trades
 
-Assumptions
-Single hardcoded user
-
-No authentication
-
-No partial fills
-
-In-memory storage (resets on restart)
-
-Sample Request
+## Sample Request
 ```bash
 Copy code
 curl -X POST http://localhost:8000/api/v1/orders \
