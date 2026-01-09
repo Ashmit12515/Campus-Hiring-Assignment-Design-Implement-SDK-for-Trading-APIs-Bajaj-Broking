@@ -22,23 +22,26 @@ The system simulates core stock broking workflows such as placing orders, execut
 
 ```bash
 python -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
+venv\Scripts\activate
+```
+```bash    
 pip install fastapi uvicorn pydantic
+```
+```bash
 python -m uvicorn app.main:app
+```
 Swagger UI:
-
-bash
-Copy code
+```bash
 http://localhost:8000/docs
-API Endpoints
-bash
-Copy code
+```
+## API Endpoints
+```bash
 GET  /api/v1/instruments
 POST /api/v1/orders
 GET  /api/v1/orders/{orderId}
 GET  /api/v1/trades
 GET  /api/v1/portfolio
+```
 Order Execution Logic
 Market orders execute immediately
 
@@ -58,7 +61,7 @@ No partial fills
 In-memory storage (resets on restart)
 
 Sample Request
-bash
+```bash
 Copy code
 curl -X POST http://localhost:8000/api/v1/orders \
 -H "Content-Type: application/json" \
@@ -68,3 +71,4 @@ curl -X POST http://localhost:8000/api/v1/orders \
   "orderType":"MARKET",
   "quantity":10
 }'
+```
