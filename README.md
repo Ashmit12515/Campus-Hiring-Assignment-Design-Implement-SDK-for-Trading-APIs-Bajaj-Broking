@@ -24,9 +24,11 @@ The system simulates core stock broking workflows such as placing orders, execut
 python -m venv venv
 venv\Scripts\activate
 ```
+## Install dependencies
 ```bash    
 pip install fastapi uvicorn pydantic
 ```
+## Run the server
 ```bash
 python -m uvicorn app.main:app
 ```
